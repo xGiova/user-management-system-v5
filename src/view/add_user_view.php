@@ -51,10 +51,11 @@
                   <?= $emailMessage ?>
                </div> 
             </div>
-
+            <label for="">Interesse</label>
             <div class="input-group mb-3">
+            
             <select class="custom-select" id="inputGroupSelect02">
-            <option selected>Choose...</option>
+            <option selected>Scegli</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
