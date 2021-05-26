@@ -25,20 +25,18 @@ $sql = "DROP DATABASE if exists $dbname;
             UNIQUE INDEX `email` (`email`)
         );
         
-        CREATE TABLE `interesse` (
-            `interesseId` INT(10) NOT NULL AUTO_INCREMENT,
-            `nomeInteresse` VARCHAR(255) NOT NULL,
-            PRIMARY KEY (`interesseId`),
-        );
-
-        CREATE TABLE `user_interesse` (
-            `userId` INT(10) NOT NULL,
-            `interesseId` INT(10) NOT NULL,
-            FOREIGN KEY (userId) REFERENCES user(userId),
+        CREATE table if not exists interesse (
+            interesseId int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            nome varchar(255) NOT NULL
+        ); 
+        
+        CREATE table if not exists user_interesse (
+            userId int(10) NOT NULL,
+            interesseId int(10) NOT NULL,
+            FOREIGN KEY (userId) REFERENCES User(userId),
             FOREIGN KEY (interesseId) REFERENCES interesse(interesseId),
             CONSTRAINT UC_user_interesse UNIQUE (userId,interesseId)
         );
-
         
         
         

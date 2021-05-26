@@ -9,7 +9,7 @@ $dbname = AppConfig::DB_NAME;
 $sql = "DROP DATABASE if exists $dbname;
         CREATE database if not exists $dbname; 
         use $dbname;
-        CREATE table if not exists User (
+        CREATE table if not exists user (
             userId int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
             firstName varchar(255) NOT NULL,
             lastName varchar(255)  NOT NULL,

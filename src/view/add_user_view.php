@@ -52,6 +52,17 @@
                </div> 
             </div>
 
+            <div class="input-group mb-3">
+            <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+         </select>
+         <div class="input-group-append">
+            <label class="input-group-text" for="inputGroupSelect02">Interesse</label>
+         </div>
+         </div>
 
              <div class="form-group">
                 <label for="">data di nascita</label>
