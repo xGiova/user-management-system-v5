@@ -23,7 +23,26 @@ $sql = "DROP DATABASE if exists $dbname;
             `password` VARCHAR(255) NOT NULL,
             PRIMARY KEY (`userId`),
             UNIQUE INDEX `email` (`email`)
-        )";
+        );
+        
+        CREATE TABLE `interesse` (
+            `interesseId` INT(10) NOT NULL AUTO_INCREMENT,
+            `nomeInteresse` VARCHAR(255) NOT NULL,
+            PRIMARY KEY (`interesseId`),
+        );
+
+        CREATE TABLE `user_interesse` (
+            `userId` INT(10) NOT NULL,
+            `interesseId` INT(10) NOT NULL,
+            FOREIGN KEY (userId) REFERENCES user(userId),
+            FOREIGN KEY (interesseId) REFERENCES interesse(interesseId),
+            CONSTRAINT UC_user_interesse UNIQUE (userId,interesseId)
+        );
+
+        
+        
+        
+        ";
 
 $conn->exec($sql);
 
